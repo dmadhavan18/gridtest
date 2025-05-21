@@ -1,0 +1,162 @@
+@keyframes hueShift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.login-page {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Arial", sans-serif;
+  background-image: linear-gradient(
+      90deg,
+      rgb(91, 34, 181) 0%,
+      rgb(91, 34, 181) 50%,
+      transparent 50%
+    ),
+    url(../img/nat-10.jpg);
+
+  .login-header {
+    z-index: 1; // Keep content above animated bg
+    text-align: center;
+    color: #fff;
+    margin-top: 4.8rem;
+    transform: translate(10%, -50%);
+    text-align: center;
+    color: #fff;
+    margin-top: 4.8rem;
+    transform: translate(10%, -50%);
+
+    .logo {
+      font-size: 4.8rem;
+    }
+
+    .title {
+      font-size: 4rem;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 1.44rem;
+      margin-top: 0.8rem;
+    }
+
+    .button-group {
+      margin-top: 1.6rem;
+
+      .btn {
+        padding: 0.8rem 2rem;
+        margin: 0 0.8rem;
+        border-radius: 0.96rem;
+        font-weight: 600;
+        cursor: pointer;
+
+        &.primary {
+          background-color: white;
+          color: #5b23b4;
+          border: none;
+        }
+
+        &.outline {
+          background: transparent;
+          border: 0.16rem solid white;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .login-card {
+    background: #fff;
+    margin-top: 3.2rem;
+    border-radius: 3.2rem;
+    box-shadow: 0 0 3.2rem rgba(0, 0, 0, 0.15);
+    padding: 3.2rem;
+    width: 30%;
+    max-width: 64rem;
+    text-align: center;
+    z-index: 1;
+
+    .icon {
+      font-size: 3.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.44rem;
+      color: #666;
+      margin-bottom: 2.4rem;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+
+      input {
+        padding: 1.2rem;
+        border: 0.16rem solid #ccc;
+        border-radius: 1.28rem;
+        font-size: 1.6rem;
+      }
+
+      .options {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.36rem;
+
+        a {
+          text-decoration: none;
+          color: #5b23b4;
+        }
+      }
+
+      .btn.signin {
+        background-color: #5b23b4;
+        color: white;
+        border: none;
+        padding: 1.2rem;
+        border-radius: 1.28rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+
+    .footer {
+      margin-top: 2.4rem;
+
+      .or {
+        margin: 1.6rem 0;
+        color: #999;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1.6rem;
+
+        button {
+          padding: 0.8rem 1.2rem;
+          border: 0.16rem solid #ccc;
+          border-radius: 0.96rem;
+          font-size: 1.6rem;
+          background: white;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
