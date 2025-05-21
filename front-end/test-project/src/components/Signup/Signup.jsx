@@ -1,27 +1,18 @@
 import React from "react";
 import "./Signup.scss";
+import logo from "../../assets/gd-logo.svg"; // Adjust path based on your folder structure
+import googleLogo from "../../assets/google-icon-logo-svgrepo-com.svg";
+import githubLogo from "../../assets/github-142-svgrepo-com.svg";
 
 const Signup = () => {
   return (
     <div className="signup-page">
-      <div className="signup-header">
-        <div className="logo">
-          
-        </div>
-        <div className="title">TestAutoPilot</div>
-        <div className="subtitle">Intelligent Test Automation Platform</div>
-        <div className="button-group">
-          <button className="btn primary">Get Started</button>
-          <button className="btn outline">Learn More</button>
-        </div>
-      </div>
-
       <div className="signup-card">
         <div className="icon">
-         
+          <img src={logo} alt="Logo" className="logo" />
         </div>
+
         <h2>Create Account</h2>
-        <p>Sign up for a new TestAutoPilot account</p>
 
         <form className="signup-form">
           <input type="text" placeholder="Full Name" />
@@ -37,13 +28,13 @@ const Signup = () => {
           </p>
 
           <div className="or">Or continue with</div>
-          <div className="social-icons">
-            <button>
-            </button>
-            <button>
-            </button>
-            <button>
-            </button>
+          <div className="social-icons auth-icon-group">
+            <a href="/auth/google">
+              <img src={googleLogo} alt="Google" />
+            </a>
+            <a href="/auth/github">
+              <img src={githubLogo} alt="GitHub" />
+            </a>
           </div>
         </div>
       </div>
