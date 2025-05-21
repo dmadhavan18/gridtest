@@ -3,16 +3,6 @@ import "./Login.scss";
 const Login = () => {
   return (
     <div className="login-page">
-      <header className="login-header">
-        <div className="logo">🤖</div>
-        <h1 className="title">TestAutoPilot</h1>
-        <p className="subtitle">Intelligent Test Automation Platform</p>
-        <div className="button-group">
-          <button className="btn primary">Get Started</button>
-          <button className="btn outline">Learn More</button>
-        </div>
-      </header>
-
       <div className="login-card">
         <div className="icon">🤖</div>
         <h2>Welcome Back</h2>
