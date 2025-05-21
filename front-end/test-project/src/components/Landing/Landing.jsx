@@ -1,6 +1,8 @@
 import "./Landing.scss";
 import GridLogo from "../../assets/GRID-LOGO.png";
 import Cover from "../../assets/software.avif";
+import { Link } from "react-router-dom";
+
 const LandingPage = () => {
   return (
     <div className="landing-page">
@@ -15,8 +17,12 @@ const LandingPage = () => {
           <a href="#">FAQ</a>
         </nav>
         <div className="auth-buttons">
-          <button className="btn outline">Sign In</button>
-          <button className="btn primary">Get Started</button>
+          <button className="btn outline ">
+            <Link to="/signup">Signup</Link>
+          </button>
+          <button className="btn primary">
+            <Link to="/login">Login</Link>
+          </button>
         </div>
       </header>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Signup.scss";
-import logo from "../../assets/gd-logo.svg"; // Adjust path based on your folder structure
+import logo from "../../assets/GRID-LOGO.png"; // Adjust path based on your folder structure
 import googleLogo from "../../assets/google-icon-logo-svgrepo-com.svg";
 import githubLogo from "../../assets/github-142-svgrepo-com.svg";
 
@@ -9,10 +9,12 @@ const Signup = () => {
     <div className="signup-page">
       <div className="signup-card">
         <div className="icon">
-          <img src={logo} alt="Logo" className="logo" />
+          <img src={logo} alt="Logo" className="logo" width="32px" height="32px" />
         </div>
 
         <h2>Create Account</h2>
+
+        {/* <p>Start automating your processes today</p> */}
 
         <form className="signup-form">
           <input type="text" placeholder="Full Name" />

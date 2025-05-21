@@ -33,6 +33,14 @@ select {
   box-sizing: border-box;
 }
 
+a {
+  all: unset; /* This resets all default styles */
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
 .landing-page {
   font-family: "Arial", sans-serif;
 
@@ -118,7 +126,6 @@ select {
       flex-direction: column;
       justify-content: flex-start;
       height: 100%;
-
 
       h1 {
         width: 80%;

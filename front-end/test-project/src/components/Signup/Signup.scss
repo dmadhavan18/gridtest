@@ -14,8 +14,8 @@
     margin-bottom: 1rem;
 
     .logo {
-      width: 25rem; // Adjust size as needed
-      height: auto;
+      width: 32px; // Adjust size as needed
+      height: 32px;
     }
   }
 
@@ -59,6 +59,7 @@
         border: 0.16rem solid #ccc;
         border-radius: 1.28rem;
         font-size: 1.6rem;
+        text-align: start;
 
         &::placeholder {
           font-family: "Roboto", sans-serif;
@@ -66,7 +67,7 @@
           color: rgb(148, 147, 147);
         }
 
-        &:focus{
+        &:focus {
           outline: none;
           border-color: #5b23b4;
         }
@@ -78,6 +79,7 @@
         border: none;
         padding: 1.2rem;
         border-radius: 1.28rem;
+        font-size: 1.5rem;
         font-weight: bold;
         cursor: pointer;
         width: 40%;
