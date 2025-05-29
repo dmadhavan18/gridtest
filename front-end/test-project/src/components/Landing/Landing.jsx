@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 const LandingPage = () => {
   return (
     <div className="landing-page">
-      <header className="navbar">
-        <div className="logo">
-          <img src={GridLogo} alt="Grid Logo" className="gridLogo" /> Grid-Test
+      <header className="navbar flex justify-between items-center gap-3 p-8 bg-white shadow-md h-32 font-normal text-[1.6rem]">
+        <div className="logo text-red-600">
+          <img src={GridLogo} alt="Grid Logo" className="gridLogo " /> Grid-Test
         </div>
         <nav className="nav-links">
           <a href="#">Features</a>

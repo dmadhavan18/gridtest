@@ -25,21 +25,6 @@
     transform: scale(1);
   }
 }
-input,
-button,
-textarea,
-select {
-  all: unset; // Removes all inherited styles
-  box-sizing: border-box;
-}
-
-a {
-  all: unset; /* This resets all default styles */
-  text-decoration: none;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-}
 
 .landing-page {
   font-family: "Arial", sans-serif;
@@ -50,15 +35,15 @@ a {
   // background-image: linear-gradient( to right bottom, #74cdeb, #fff );
 
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 4rem;
-    background-color: white;
-    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.05);
-    height: 8rem;
-    font-weight: 400;
-    font-size: 1.6rem;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // padding: 2rem 4rem;
+    // background-color: white;
+    // box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.05);
+    // height: 8rem;
+    // font-weight: 400;
+    // font-size: 1.6rem;
 
     .gridLogo {
       width: 3.5rem;
@@ -67,7 +52,6 @@ a {
     .logo {
       font-size: 2rem;
       font-weight: 700;
-      color: #2563eb;
       display: flex;
       align-items: center;
       gap: 0.5rem;
