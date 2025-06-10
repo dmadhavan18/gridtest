@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useCallback } from "react";
 
 export default function Sidebar() {
+  
   const handleSidebarClick = useCallback((e) => {
     const target = e.target.closest("a");
     if (!target) return;
