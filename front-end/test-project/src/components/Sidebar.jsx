@@ -14,14 +14,14 @@ export default function Sidebar() {
       link.classList.remove(
         "bg-gradient-to-r",
         "from-violet-100",
-        ""
+        "to-pink-100",
       );
 
       if (link === target) {
         link.classList.add(
           "bg-gradient-to-r",
           "from-violet-100",
-          ""
+          "to-pink-100"
         );
       }
     });
@@ -40,8 +40,7 @@ export default function Sidebar() {
         <Link
           to="/"
           className="flex gap-3 items-center bg-gradient-to-r from-violet-100 to-pink-100 text-violet-800  hover:bg-gradient-to-r hover:from-violet-100 hover:to-pink-100 rounded-md  p-3 
-          transition duration-200 ease-in-out
-"
+          transition duration-200 ease-in-out"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
