@@ -1,14 +1,31 @@
 import { useSelector, useDispatch } from "react-redux";
 import { changeCurrPage } from "../store";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect,useState } from "react";
+import React from "react";
 
 export default function NewProject() {
   const currPage = useSelector((state) => state.topBar.currPage);
   const dispatch = useDispatch();
 
+
+
+  const [screens, setScreens] = useState([{ name: "", url: "" }]);
+
   useEffect(() => {
     const page = "Projects";
     dispatch(changeCurrPage(page));
+  }, [dispatch]);
+
+  const handleAddScreen = useCallback(() => {
+    setScreens(prev => [...prev, { name: "", url: "" }]);
+  }, []);
+
+  const handleScreenChange = useCallback((idx, field, value) => {
+    setScreens(prev =>
+      prev.map((screen, i) =>
+        i === idx ? { ...screen, [field]: value } : screen
+      )
+    );
   }, []);
 
   return (
@@ -131,7 +148,49 @@ export default function NewProject() {
         <div className="grid grid-cols-2 items-center justify-center max-w-4xl gap-x-16 gap-y-8 bg-white p-8 rounded-xl">
           <h3 className="col-span-2 text-violet-800 text-lg">Screens</h3>
 
-          
+          <div className="col-span-2 w-full">
+            <table className="min-w-full border border-gray-200 rounded-xl overflow-hidden">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="px-4 py-2 text-left font-medium text-gray-700">No</th>
+                  <th className="px-4 py-2 text-left font-medium text-gray-700">Name</th>
+                  <th className="px-4 py-2 text-left font-medium text-gray-700">Url</th>
+                </tr>
+              </thead>
+              <tbody>
+                {screens.map((screen, idx) => (
+                  <tr key={idx} className="border-t">
+                    <td className="px-4 py-2">{idx + 1}</td>
+                    <td className="px-4 py-2">
+                      <input
+                        type="text"
+                        value={screen.name}
+                        onChange={e => handleScreenChange(idx, "name", e.target.value)}
+                        className="w-full px-2 py-1 rounded border border-gray-300"
+                        placeholder="Screen name"
+                      />
+                    </td>
+                    <td className="px-4 py-2">
+                      <input
+                        type="text"
+                        value={screen.url}
+                        onChange={e => handleScreenChange(idx, "url", e.target.value)}
+                        className="w-full px-2 py-1 rounded border border-gray-300"
+                        placeholder="Screen url"
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <button
+              type="button"
+              onClick={handleAddScreen}
+              className="mt-4 px-4 py-2 bg-violet-600 text-white rounded hover:bg-violet-700"
+            >
+              Add Screen
+            </button>
+          </div>
 
         
 
