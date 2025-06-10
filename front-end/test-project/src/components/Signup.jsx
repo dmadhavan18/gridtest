@@ -1,8 +1,7 @@
 import { useRef } from "react";
-import "./Signup.scss";
-import logo from "../../assets/GRID-LOGO.png"; // Adjust path based on your folder structure
-import googleLogo from "../../assets/google-icon-logo-svgrepo-com.svg";
-import githubLogo from "../../assets/github-142-svgrepo-com.svg";
+import logo from "../assets/GRID-LOGO.png"; // Adjust path based on your folder structure
+import googleLogo from "../assets/google-icon-logo-svgrepo-com.svg";
+import githubLogo from "../assets/github-142-svgrepo-com.svg";
 
 const Signup = () => {
   const _name = useRef();
@@ -47,8 +46,8 @@ const Signup = () => {
   }
 
   return (
-    <div className="signup-page">
-      <div className="signup-card">
+    <div className="h-dvh flex flex-col items-center justify-center overflow-auto">
+      <div className="max-h-max flex flex-col items-center justify-between p-8  rounded-2xl shadow-lg w-full max-w-md gap-8">
         <div className="icon">
           <img
             src={logo}
@@ -61,43 +60,60 @@ const Signup = () => {
 
         <h2>Create Account</h2>
 
-        {/* <p>Start automating your processes today</p> */}
-
-        <form className="signup-form" onSubmit={onSubmit}>
-          <input ref={_name} type="text" placeholder="Full Name" required />
+        <form className="flex flex-col gap-4 w-72 justify-center" onSubmit={onSubmit}>
+          <input
+            ref={_name}
+            type="text"
+            placeholder="Full Name"
+            required
+            className="border border-gray-300 rounded-md px-4 py-3 focus:outline-violet-600 text-gray-600 text-base "
+          />
           <input
             ref={email}
             type="email"
             placeholder="Email Address"
             required
+            className="border border-gray-300 rounded-md px-4 py-3 focus:outline-violet-600 text-gray-600 text-base "
           />
           <input
             ref={password}
             type="password"
             placeholder="Create Password"
             required
+            className="border border-gray-300 rounded-md px-4 py-3 focus:outline-violet-600 text-gray-600 text-base "
           />
           <input
             ref={confirmPassword}
             type="password"
             placeholder="Confirm Password"
             required
+            className="border border-gray-300 rounded-md px-4 py-3 focus:outline-violet-600 text-gray-600 text-base "
           />
-          <button className="btn signup">Sign Up</button>
+          <button className="border border-gray-300 p-2 rounded-md bg-violet-600 w-32">
+            Sign Up
+          </button>
         </form>
 
-        <div className="footer">
-          <p>
-            Already have an account? <a href="/login">Sign in</a>
+        <div className="footer items-center flex flex-col gap-4">
+          <p className="text-sm text-gray-600">
+            By signing up, you agree to our{" "}
+            <a href="/terms" className="text-blue-600">
+              Terms of Service
+            </a>{" "}
+            and{" "}
+            <a href="/privacy" className="text-blue-600">
+              Privacy Policy
+            </a>
+            . Already have an account? <a href="/login">Sign in</a>
           </p>
 
           <div className="or">Or continue with</div>
-          <div className="social-icons auth-icon-group">
+          <div className="flex gap-4">
             <a href="/auth/google">
-              <img src={googleLogo} alt="Google" />
+              <img src={googleLogo} alt="Google" width="48px" height="48px" />
             </a>
             <a href="/auth/github">
-              <img src={githubLogo} alt="GitHub" />
+              <img src={githubLogo} alt="GitHub" width="48px" height="48px" />
             </a>
           </div>
         </div>

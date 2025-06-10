@@ -1,6 +1,5 @@
-import "./Landing.scss";
-import GridLogo from "../../assets/GRID-LOGO.png";
-import Cover from "../../assets/software.avif";
+import GridLogo from "../assets/GRID-LOGO.png";
+import Cover from "../assets/software.avif";
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {

@@ -1,7 +1,6 @@
-import "./Login.scss";
-import GridLogo from "../../assets/GRID-LOGO.png";
-import googleLogo from "../../assets/google-icon-logo-svgrepo-com.svg";
-import githubLogo from "../../assets/github-142-svgrepo-com.svg";
+import GridLogo from "../assets/GRID-LOGO.png";
+import googleLogo from "../assets/google-icon-logo-svgrepo-com.svg";
+import githubLogo from "../assets/github-142-svgrepo-com.svg";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 
@@ -9,7 +8,6 @@ const Login = () => {
   const email = useRef();
   const password = useRef();
   const URL = "http://192.168.12.102:8080/api/auth/login";
-  // "";
 
   async function onSubmitHandle(e) {
     e.preventDefault();
