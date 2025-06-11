@@ -31,8 +31,8 @@ export default function DetailProject() {
 
   return (
     <>
-      <form className="grid grid-cols-1 2xl:grid-cols-[1fr_1fr] gap-y-12 gap-x-12">
-        <div className="grid grid-cols-2 items-center justify-center max-w-4xl  gap-x-16 gap-y-8 bg-white p-8 rounded-xl">
+      <form className="grid grid-cols-1 2xl:grid-cols-2 gap-y-12 gap-x-12">
+        <div className="grid grid-cols-2 items-center justify-center max-w-4xl 2xl:max-w-full  gap-x-16 gap-y-8 bg-white p-8 rounded-xl">
           <h3 className="col-span-2 text-violet-800 text-lg">
             Project Information
           </h3>
@@ -53,26 +53,26 @@ export default function DetailProject() {
           </div>
         </div> 
 
-        <div className="grid grid-cols-2 items-center justify-center max-w-4xl  gap-x-16 gap-y-8 bg-white p-8 rounded-xl">
+        <div className="grid grid-cols-2 items-center justify-center max-w-4xl 2xl:max-w-full gap-x-16 gap-y-8 bg-white p-8 rounded-xl">
           <h3 className="col-span-2 text-violet-800 text-lg">Project Urls</h3>
 
           <div className="flex flex-col gap-4 items-start">
             <label className="font-normal">Git hub Repository Url</label>
-            <p className={textStyle}>{project.gitHubUrl}</p>
+            <p className="px-4 py-3 rounded-xl w-48 overflow-visible">{project.gitHubUrl}</p>
           </div>
 
           <div className="flex flex-col gap-4 items-start">
             <label className="font-normal">Project url</label>
-            <p className={textStyle}>{project.projectUrl}</p>
+            <p className="px-4 py-3 rounded-xl w-48 overflow-visilble">{project.projectUrl}</p>
           </div>
 
           <div className="flex flex-col gap-4 items-start col-span-2">
             <label className="font-normal">Framework</label>
-            <p className={textStyle}>{project.framework}</p>
+            <p className="px-4 py-3 rounded-xl">{project.framework}</p>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 items-center justify-center max-w-4xl   gap-x-16 gap-y-8 bg-white p-8 rounded-xl self-start">
+        <div className="grid grid-cols-2 items-center justify-center max-w-4xl 2xl:max-w-full  gap-x-16 gap-y-8 bg-white p-8 rounded-xl self-start">
           <h3 className="col-span-2 text-violet-800 text-lg">Screens</h3>
 
           <div className="col-span-2 w-full">
@@ -97,7 +97,7 @@ export default function DetailProject() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 items-center justify-center max-w-4xl   gap-x-16 gap-y-8 bg-white p-8 rounded-xl max-h-fit self-start">
+        <div className="grid grid-cols-2 items-center justify-center max-w-4xl 2xl:max-w-full  gap-x-16 gap-y-8 bg-white p-8 rounded-xl max-h-fit self-start">
           <h3 className="col-span-2 text-violet-800 text-lg">Users</h3>
 
           <div className="col-span-2 w-full">
