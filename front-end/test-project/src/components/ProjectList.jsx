@@ -34,6 +34,26 @@ export default function ProjectList() {
         </div>
       </Link>
 
+      <Link to="/project/detail">
+        <div className="flex gap-3 bg-white border-1 border-dashed border-gray-400 px-5 py-2 rounded-xl justify-center max-w-[1500px] mt-10 ">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 4.5v15m7.5-7.5h-15"
+            />
+          </svg>
+          Detail
+        </div>
+      </Link>
+
       <div className="flex justify-between items-center max-w-[1500px]">
         <span className="text-base  font-base text-violet-800">
           Recent Projects

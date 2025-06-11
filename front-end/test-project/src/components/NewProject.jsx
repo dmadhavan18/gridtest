@@ -1,37 +1,59 @@
 import { useSelector, useDispatch } from "react-redux";
 import { changeCurrPage } from "../store";
-import { useCallback, useEffect,useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import React from "react";
 
 export default function NewProject() {
-  const currPage = useSelector((state) => state.topBar.currPage);
   const dispatch = useDispatch();
-
-
+  const formRef = useRef(null);
 
   const [screens, setScreens] = useState([{ name: "", url: "" }]);
-
   useEffect(() => {
     const page = "Projects";
     dispatch(changeCurrPage(page));
   }, [dispatch]);
 
   const handleAddScreen = useCallback(() => {
-    setScreens(prev => [...prev, { name: "", url: "" }]);
+    setScreens((prev) => [...prev, { name: "", url: "" }]);
   }, []);
 
   const handleScreenChange = useCallback((idx, field, value) => {
-    setScreens(prev =>
+    setScreens((prev) =>
       prev.map((screen, i) =>
         i === idx ? { ...screen, [field]: value } : screen
       )
     );
   }, []);
 
+  const [users, setUsers] = useState([]);
+  const handleAddUser = useCallback(() => {
+    setUsers((prev) => [...prev, { user: "", role: "" }]);
+  }, []);
+  const handleUserChange = useCallback((idx, field, value) => {
+    setUsers((prev) =>
+      prev.map((userRow, i) =>
+        i === idx ? { ...userRow, [field]: value } : userRow
+      )
+    );
+  }, []);
+
+  // Add this handler
+  const handleSave = (e) => {
+    e.preventDefault();
+
+    const form = formRef.current;
+    if (form) {
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      console.log(data);
+    }
+    
+  };
+
   return (
     <>
-      <form className="grid grid-cols-1 items-center justify-center gap-y-12 ">
-        <div className="grid grid-cols-2 items-center justify-center max-w-4xl gap-x-16 gap-y-8 bg-white p-8 rounded-xl">
+      <form className="grid grid-cols-1 2xl:grid-cols-[max-content_max-content]  gap-y-12 gap-x-12 " onSubmit={handleSave} ref={formRef}>
+        <div className="grid grid-cols-2 items-center justify-center max-w-4xl 2xl:min-w-xl gap-x-16 gap-y-8 bg-white p-8 rounded-xl">
           <h3 className="col-span-2 text-violet-800 text-lg">
             Project Information
           </h3>
@@ -46,7 +68,7 @@ export default function NewProject() {
               id="name"
               name="name"
               placeholder="Project name"
-              className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500"
+              className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 placeholder:text-inherit"
             />
           </div>
 
@@ -60,25 +82,25 @@ export default function NewProject() {
               id="screens-no"
               name="screens-no"
               placeholder="Number of Screens"
-              className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500"
+              className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 placeholder:text-inherit"
             />
           </div>
 
           <div className="flex flex-col gap-4 items-start col-span-2">
-            <label htmlFor="Description" className="font-normal">
+            <label htmlFor="description" className="font-normal">
               Description
             </label>
 
             <textarea
               name="description"
               id="description"
-              className="w-full px-4 py-3 h-24 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 resize-none"
+              className="w-full px-4 py-3 h-24 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 resize-none placeholder:text-inherit"
               placeholder="Project description"
             ></textarea>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 items-center justify-center max-w-4xl gap-x-16 gap-y-8 bg-white p-8 rounded-xl">
+        <div className="grid grid-cols-2 items-center justify-center max-w-4xl 2xl:min-w-xl gap-x-16 gap-y-8 bg-white p-8 rounded-xl">
           <h3 className="col-span-2 text-violet-800 text-lg">Project Urls</h3>
 
           <div className="flex flex-col gap-4 items-start">
@@ -90,7 +112,7 @@ export default function NewProject() {
               id="git-hub-url"
               name="git-hub-url"
               placeholder="Git hub url"
-              className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500"
+              className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 placeholder:text-inherit"
             />
           </div>
 
@@ -103,7 +125,7 @@ export default function NewProject() {
               id="project-url"
               name="project-url"
               placeholder="Project url"
-              className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500"
+              className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 placeholder:text-inherit"
             />
           </div>
 
@@ -115,7 +137,7 @@ export default function NewProject() {
               <select
                 id="framework"
                 name="framework"
-                className="w-full px-4 py-3 pr-10 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 bg-white appearance-none"
+                className="w-full px-4 py-3 pr-10 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 bg-white appearance-none placeholder:text-inherit"
                 defaultValue=""
               >
                 <option value="" disabled>
@@ -131,42 +153,49 @@ export default function NewProject() {
               </select>
               <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
                 <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
-                  <path d="M6 8l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path
+                    d="M6 8l4 4 4-4"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
                 </svg>
               </span>
             </div>
-          
-          
           </div>
-
-
-
-
         </div>
 
-
-        <div className="grid grid-cols-2 items-center justify-center max-w-4xl gap-x-16 gap-y-8 bg-white p-8 rounded-xl">
+        <div className="grid grid-cols-2 items-center justify-center max-w-4xl 2xl:min-w-xl gap-x-16 gap-y-8 bg-white p-8 rounded-xl self-start">
           <h3 className="col-span-2 text-violet-800 text-lg">Screens</h3>
 
           <div className="col-span-2 w-full">
-            <table className="min-w-full border border-gray-200 rounded-xl overflow-hidden">
+            <table className="min-w-full rounded-xl overflow-hidden">
               <thead className="bg-gray-100">
                 <tr>
-                  <th className="px-4 py-2 text-left font-medium text-gray-700">No</th>
-                  <th className="px-4 py-2 text-left font-medium text-gray-700">Name</th>
-                  <th className="px-4 py-2 text-left font-medium text-gray-700">Url</th>
+                  <th className="px-4 py-2 text-left font-medium text-gray-700">
+                    No
+                  </th>
+                  <th className="px-4 py-2 text-left font-medium text-gray-700">
+                    Name
+                  </th>
+                  <th className="px-4 py-2 text-left font-medium text-gray-700">
+                    Url
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {screens.map((screen, idx) => (
-                  <tr key={idx} className="border-t">
+                  <tr key={idx} className="border-t border-gray-200">
                     <td className="px-4 py-2">{idx + 1}</td>
                     <td className="px-4 py-2">
                       <input
                         type="text"
                         value={screen.name}
-                        onChange={e => handleScreenChange(idx, "name", e.target.value)}
-                        className="w-full px-2 py-1 rounded border border-gray-300"
+                        onChange={(e) =>
+                          handleScreenChange(idx, "name", e.target.value)
+                        }
+                        className="w-full  py-1 outline-0 focus:border-b-1 placeholder:text-inherit"
                         placeholder="Screen name"
                       />
                     </td>
@@ -174,8 +203,10 @@ export default function NewProject() {
                       <input
                         type="text"
                         value={screen.url}
-                        onChange={e => handleScreenChange(idx, "url", e.target.value)}
-                        className="w-full px-2 py-1 rounded border border-gray-300"
+                        onChange={(e) =>
+                          handleScreenChange(idx, "url", e.target.value)
+                        }
+                        className="w-full  py-1 outline-0 focus:border-b-1 placeholder:text-inherit"
                         placeholder="Screen url"
                       />
                     </td>
@@ -191,14 +222,78 @@ export default function NewProject() {
               Add Screen
             </button>
           </div>
-
-        
-
-
-
         </div>
 
+        <div className="grid grid-cols-2 items-center justify-center max-w-4xl 2xl:min-w-xl gap-x-16 gap-y-8 bg-white p-8 rounded-xl max-h-fit self-start">
+          <h3 className="col-span-2 text-violet-800 text-lg">Users</h3>
 
+          <div className="col-span-2 w-full">
+            <table className="min-w-full rounded-xl overflow-hidden">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="px-4 py-2 text-left font-medium text-gray-700">
+                    No
+                  </th>
+                  <th className="px-4 py-2 text-left font-medium text-gray-700">
+                    User
+                  </th>
+                  <th className="px-4 py-2 text-left font-medium text-gray-700">
+                    Role
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {users.map((userRow, idx) => (
+                  <tr key={idx} className="border-t border-gray-200">
+                    <td className="px-4 py-2">{idx + 1}</td>
+                    <td className="px-4 py-2">
+                      <input
+                        type="text"
+                        className="w-full  py-1 outline-0 focus:border-b-1 placeholder:text-inherit"
+                        value={userRow.user}
+                        placeholder="User"
+                        onChange={(e) =>
+                          handleUserChange(idx, "user", e.target.value)
+                        }
+                      />
+                    </td>
+                    <td className="px-4 py-2">
+                      <select
+                        className="w-full  py-1 rounded outline-0 focus:border-b-1 placeholder:text-inherit"
+                        value={userRow.role}
+                        onChange={(e) =>
+                          handleUserChange(idx, "role", e.target.value)
+                        }
+                      >
+                        <option value="" disabled>
+                          Select role
+                        </option>
+                        <option value="viewer">Viewer</option>
+                        <option value="admin">Admin</option>
+                        <option value="tester">Tester</option>
+                      </select>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <button
+              type="button"
+              onClick={handleAddUser}
+              className="mt-4 px-4 py-2 bg-violet-600 text-white rounded hover:bg-violet-700"
+            >
+              Add User
+            </button>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          className="m mx-8 px-4 py-2 max-w-24 bg-violet-600 text-white rounded hover:bg-violet-700"
+          onClick={handleSave}
+        >
+          Save
+        </button>
       </form>
     </>
   );

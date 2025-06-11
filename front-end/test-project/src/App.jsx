@@ -9,6 +9,8 @@ import {
 } from "react-router-dom";
 import ProjectList from "./components/ProjectList";
 import NewProject from "./components/NewProject";
+import ProjectDetail from "./components/ProjectDetail";
+import ProjectEdit from "./components/ProjectEdit";
 
 let router = createBrowserRouter([
   {
@@ -25,6 +27,10 @@ let router = createBrowserRouter([
           {
             path: "/project/new",
             element: <NewProject />,
+          },
+          {
+            path: "/project/detail",
+            element: <ProjectDetail />,
           },
         ],
       },
