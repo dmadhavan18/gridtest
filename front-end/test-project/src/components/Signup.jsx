@@ -9,7 +9,7 @@ const Signup = () => {
   const password = useRef();
   const confirmPassword = useRef();
 
-  const URL = "http://192.168.12.102:8080/api/auth/register";
+  const URL = "http://192.168.29.152:8081/api/auth/register";
 
   async function onSubmit(e) {
     e.preventDefault();

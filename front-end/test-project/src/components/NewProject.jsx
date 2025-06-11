@@ -103,7 +103,7 @@ export default function NewProject() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 items-center justify-center max-w-4xl 2xl:max-w-full 2 gap-x-16 gap-y-8 bg-white p-8 rounded-xl">
+        <div className="grid grid-cols-2 items-center justify-center max-w-4xl 2xl:max-w-full  gap-x-16 gap-y-8 bg-white p-8 rounded-xl">
           <h3 className="col-span-2 text-violet-800 text-lg">Project Urls</h3>
 
           <div className="flex flex-col gap-4 items-start">
@@ -169,7 +169,7 @@ export default function NewProject() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 items-center justify-center max-w-4x 2xl:max-w-full l gap-x-16 gap-y-8 bg-white p-8 rounded-xl self-start">
+        <div className="grid grid-cols-2 items-center justify-center max-w-4xl 2xl:max-w-full  gap-x-16 gap-y-8 bg-white p-8 rounded-xl self-start">
           <h3 className="col-span-2 text-violet-800 text-lg">Screens</h3>
 
           <div className="col-span-2 w-full">

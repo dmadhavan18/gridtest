@@ -4,95 +4,69 @@ import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
-    <div className="landing-page">
-      <header className="navbar flex justify-between items-center gap-3 p-8 bg-white shadow-md h-32 font-normal text-[1.6rem]">
-        <div className="logo text-red-600">
-          <img src={GridLogo} alt="Grid Logo" className="gridLogo " /> Grid-Test
+    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100">
+      <header className="flex justify-between items-center px-10 py-6 bg-white shadow-md h-28">
+        <div className="flex items-center gap-3 text-2xl font-bold text-red-600">
+          <img src={GridLogo} alt="Grid Logo" className="h-12 w-12 object-contain" />
+          Grid-Test
         </div>
-        <nav className="nav-links">
-          <a href="#">Features</a>
-          <a href="#">How it Works</a>
-          <a href="#">Pricing</a>
-          <a href="#">FAQ</a>
+        <nav className="flex gap-8 text-gray-700 font-medium text-lg">
+          <a href="#" className="hover:text-blue-600 transition">Features</a>
+          <a href="#" className="hover:text-blue-600 transition">How it Works</a>
+          <a href="#" className="hover:text-blue-600 transition">Pricing</a>
+          <a href="#" className="hover:text-blue-600 transition">FAQ</a>
         </nav>
-        <div className="auth-buttons">
-          <button className="btn outline ">
-            <Link to="/signup">Signup</Link>
-          </button>
-          <button className="btn primary">
-            <Link to="/login">Login</Link>
-          </button>
+        <div className="flex gap-4">
+          <Link to="/signup">
+            <button className="px-5 py-2 border border-blue-600 text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition">Signup</button>
+          </Link>
+          <Link to="/login">
+            <button className="px-5 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">Login</button>
+          </Link>
         </div>
       </header>
 
-      <main className="hero">
-        <div className="hero-text">
-          <h1>
-            <span>AI-Powered</span> Test Case Generation & Smart Reports for
-            Websites
+      <main className="flex flex-col-reverse md:flex-row items-center justify-between px-10 md:px-24 py-16 gap-12">
+        <div className="flex-1 max-w-xl">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 leading-tight">
+            <span className="text-blue-600">AI-Powered</span> Test Case Generation &amp; Smart Reports for Websites
           </h1>
-          <p>
-            Instantly generate robust test cases and insightful reports for your
-            websites using advanced AI. Simplify QA, boost reliability, and
-            accelerate releases.
+          <p className="text-lg text-gray-700 mb-8">
+            Instantly generate robust test cases and insightful reports for your websites using advanced AI. Simplify QA, boost reliability, and accelerate releases.
           </p>
-          <div className="input-group">
-            <input type="text" placeholder="Enter your website URL" />
-            <button className="btn primary">Get Started</button>
+          <div className="flex gap-3 mb-8">
+            <input
+              type="text"
+              placeholder="Enter your website URL"
+              className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 text-base"
+            />
+            <button className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
+              Get Started
+            </button>
           </div>
-          <ul className="features">
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m4.5 12.75 6 6 9-13.5"
-                />
+          <ul className="space-y-3">
+            <li className="flex items-center gap-2 text-gray-800 text-base">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
               </svg>
               No code required
             </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m4.5 12.75 6 6 9-13.5"
-                />
+            <li className="flex items-center gap-2 text-gray-800 text-base">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
               </svg>
               Works with any site
             </li>
-            <li>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.5}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m4.5 12.75 6 6 9-13.5"
-                />
+            <li className="flex items-center gap-2 text-gray-800 text-base">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-500" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
               </svg>
               Ease of Use
             </li>
           </ul>
         </div>
-        <div className="hero-image">
-          <img src={Cover} alt="Dashboard" />
+        <div className="flex-1 flex justify-center">
+          <img src={Cover} alt="Dashboard" className="rounded-2xl shadow-lg w-full max-w-md object-cover" />
         </div>
       </main>
     </div>

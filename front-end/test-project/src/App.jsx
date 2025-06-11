@@ -36,6 +36,14 @@ let router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/signup",
+    Component: Signup
+  },
+   {
+    path: "/login",
+    Component: Login
+  }
 ]);
 
 function App() {
