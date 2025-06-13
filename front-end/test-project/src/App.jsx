@@ -11,6 +11,7 @@ import ProjectList from "./components/ProjectList";
 import NewProject from "./components/NewProject";
 import ProjectDetail from "./components/ProjectDetail";
 import ProjectEdit from "./components/ProjectEdit";
+import Reports from "./components/Reports";
 
 let router = createBrowserRouter([
   {
@@ -32,6 +33,14 @@ let router = createBrowserRouter([
             path: "/project/detail",
             element: <ProjectDetail />,
           },
+          {
+            path: "/project/edit",
+            element: <ProjectEdit />,
+          },
+          {
+            path: "/project/reports",
+            element: <Reports />, 
+          }
         ],
       },
     ],

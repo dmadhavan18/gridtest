@@ -127,7 +127,7 @@ export default function Sidebar() {
         </Link>
 
         <Link
-          to="/"
+          to="/project/reports"
           className="flex gap-3 items-center  hover:bg-gradient-to-r hover:from-violet-100 hover:to-pink-100   text-violet-800  p-3 rounded-md transition duration-200"
         >
           <svg

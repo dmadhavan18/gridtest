@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import { changeCurrPage } from "../store";
 import React, { useEffect } from "react";
+import ProjectEdit from "./ProjectEdit";
+import { Link } from "react-router-dom";
 
 export default function DetailProject() {
   const dispatch = useDispatch();
@@ -29,8 +31,10 @@ export default function DetailProject() {
 
   const textStyle = "px-4 py-3 rounded-xl";
 
+ 
+
   return (
-    <>
+    <div className="relative">
       <form className="grid grid-cols-1 2xl:grid-cols-2 gap-y-12 gap-x-12">
         <div className="grid grid-cols-2 items-center justify-center max-w-4xl 2xl:max-w-full  gap-x-16 gap-y-8 bg-white p-8 rounded-xl">
           <h3 className="col-span-2 text-violet-800 text-lg">
@@ -122,7 +126,15 @@ export default function DetailProject() {
           </div>
         </div>
       </form>
-    </>
+      {/* Fixed action buttons */}
+      <div className="fixed top-26 right-8 flex gap-4 z-50">
+        
+        <Link to="/project/edit">
+          <button className="bg-violet-600 text-white px-4 py-2 rounded-md shadow">
+            Edit Project
+          </button>
+        </Link>
+      </div>
+    </div>
   );
-
 }
