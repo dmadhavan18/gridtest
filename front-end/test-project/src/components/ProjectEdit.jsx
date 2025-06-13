@@ -62,7 +62,9 @@ export default function ProjectEdit() {
       ref={formRef}
     >
       <div className="grid grid-cols-2 items-center justify-center max-w-4xl 2xl:max-w-full  gap-x-16 gap-y-8 bg-white p-8 rounded-xl">
-        <h3 className="col-span-2 text-violet-800 text-lg">Project Information</h3>
+        <h3 className="col-span-2 text-violet-800 text-lg">
+          Project Information
+        </h3>
 
         <div className="flex flex-col gap-4 items-start">
           <label htmlFor="name" className="font-normal">
@@ -147,7 +149,9 @@ export default function ProjectEdit() {
             defaultValue="react"
             className="w-full px-4 py-3 pr-10 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 bg-white appearance-none placeholder:text-inherit"
           >
-            <option value="" disabled>Select framework</option>
+            <option value="" disabled>
+              Select framework
+            </option>
             <option value="react">React</option>
             <option value="vue">Vue</option>
             <option value="angular">Angular</option>
@@ -156,7 +160,7 @@ export default function ProjectEdit() {
             <option value="nuxtjs">Nuxt.js</option>
             <option value="other">Other</option>
           </select>
-          <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
+          <span className="pointer-events-none absolute right-3 top-15 -translate-y-1/2 text-gray-400">
             <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
               <path
                 d="M6 8l4 4 4-4"
@@ -176,9 +180,15 @@ export default function ProjectEdit() {
           <table className="min-w-full rounded-xl overflow-hidden">
             <thead className="bg-gray-100">
               <tr>
-                <th className="px-4 py-2 text-left font-medium text-gray-700">No</th>
-                <th className="px-4 py-2 text-left font-medium text-gray-700">Name</th>
-                <th className="px-4 py-2 text-left font-medium text-gray-700">Url</th>
+                <th className="px-4 py-2 text-left font-medium text-gray-700">
+                  No
+                </th>
+                <th className="px-4 py-2 text-left font-medium text-gray-700">
+                  Name
+                </th>
+                <th className="px-4 py-2 text-left font-medium text-gray-700">
+                  Url
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -227,9 +237,15 @@ export default function ProjectEdit() {
           <table className="min-w-full rounded-xl overflow-hidden">
             <thead className="bg-gray-100">
               <tr>
-                <th className="px-4 py-2 text-left font-medium text-gray-700">No</th>
-                <th className="px-4 py-2 text-left font-medium text-gray-700">User</th>
-                <th className="px-4 py-2 text-left font-medium text-gray-700">Role</th>
+                <th className="px-4 py-2 text-left font-medium text-gray-700">
+                  No
+                </th>
+                <th className="px-4 py-2 text-left font-medium text-gray-700">
+                  User
+                </th>
+                <th className="px-4 py-2 text-left font-medium text-gray-700">
+                  Role
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -254,7 +270,9 @@ export default function ProjectEdit() {
                         handleUserChange(idx, "role", e.target.value)
                       }
                     >
-                      <option value="" disabled>Select role</option>
+                      <option value="" disabled>
+                        Select role
+                      </option>
                       <option value="viewer">Viewer</option>
                       <option value="admin">Admin</option>
                       <option value="tester">Tester</option>
@@ -274,12 +292,18 @@ export default function ProjectEdit() {
         </div>
       </div>
 
-      <button
-        type="submit"
-        className="m mx-8 px-4 py-2 max-w-24 bg-violet-600 text-white rounded hover:bg-violet-700"
-      >
-        Save
-      </button>
+      {/* Save button aligned with form content */}
+      <div className="fixed right-0 bottom-0 z-50 pointer-events-none">
+        <div className="mx-auto w-full max-w-6xl px-8 flex justify-end pointer-events-auto">
+          <button
+            type="submit"
+            className="mb-8 px-8 py-3 bg-violet-600 text-white rounded-xl hover:bg-violet-700 shadow-lg"
+            style={{ width: "fit-content" }}
+          >
+            Save
+          </button>
+        </div>
+      </div>
     </form>
   );
 }
