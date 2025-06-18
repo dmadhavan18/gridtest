@@ -3,15 +3,13 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import LandingPage from "./components/Landing";
 import Main from "./components/Main";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProjectList from "./components/ProjectList";
 import NewProject from "./components/NewProject";
 import ProjectDetail from "./components/ProjectDetail";
 import ProjectEdit from "./components/ProjectEdit";
 import Reports from "./components/Reports";
+import ProjectTestCaseExplorer from "./components/ProjectTestCaseExplorer";
 
 let router = createBrowserRouter([
   {
@@ -39,20 +37,24 @@ let router = createBrowserRouter([
           },
           {
             path: "/project/reports",
-            element: <Reports />, 
-          }
+            element: <Reports />,
+          },
+          {
+            path: "/project/testcases",
+            element: <ProjectTestCaseExplorer />,
+          },
         ],
       },
     ],
   },
   {
     path: "/signup",
-    Component: Signup
+    Component: Signup,
   },
-   {
+  {
     path: "/login",
-    Component: Login
-  }
+    Component: Login,
+  },
 ]);
 
 function App() {

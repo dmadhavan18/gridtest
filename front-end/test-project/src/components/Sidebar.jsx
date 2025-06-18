@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useCallback } from "react";
 
 export default function Sidebar() {
-  
   const handleSidebarClick = useCallback((e) => {
     const target = e.target.closest("a");
     if (!target) return;
@@ -15,7 +14,7 @@ export default function Sidebar() {
       link.classList.remove(
         "bg-gradient-to-r",
         "from-violet-100",
-        "to-pink-100",
+        "to-pink-100"
       );
 
       if (link === target) {
@@ -38,7 +37,7 @@ export default function Sidebar() {
       </div>
 
       <nav className="flex flex-col gap-2 mt-14">
-        <Link
+        {/* <Link
           to="/"
           className="flex gap-3 items-center bg-gradient-to-r from-violet-100 to-pink-100 text-violet-800  hover:bg-gradient-to-r hover:from-violet-100 hover:to-pink-100 rounded-md  p-3 
           transition duration-200 ease-in-out"
@@ -58,7 +57,7 @@ export default function Sidebar() {
             />
           </svg>
           <span>Dashboard</span>
-        </Link>
+        </Link> */}
 
         <Link
           to="/project"
@@ -101,7 +100,7 @@ export default function Sidebar() {
             />
           </svg>
 
-          <span>Test-Case Generation</span>
+          <span>Test-Case</span>
         </Link>
 
         <Link
