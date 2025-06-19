@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { changeCurrPage } from "../store";
+import { changeCurrPage } from "../../store";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 
 export default function ProjectEdit() {

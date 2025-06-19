@@ -1,15 +1,15 @@
 import "./app.css";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import LandingPage from "./components/Landing";
-import Main from "./components/Main";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import LandingPage from "./pages/Landing";
+import Main from "./pages/layout/Main";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ProjectList from "./components/ProjectList";
-import NewProject from "./components/NewProject";
-import ProjectDetail from "./components/ProjectDetail";
-import ProjectEdit from "./components/ProjectEdit";
+import ProjectList from "./components/Project/ProjectList";
+import NewProject from "./components/Project/NewProject";
+import ProjectDetail from "./components/Project/ProjectDetail";
+import ProjectEdit from "./components/Project/ProjectEdit";
 import Reports from "./components/Reports";
-import ProjectTestCaseExplorer from "./components/ProjectTestCaseExplorer";
+import ProjectTestCaseExplorer from "./components/Screens/ProjectTestCaseExplorer";
 
 let router = createBrowserRouter([
   {

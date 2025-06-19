@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux";
-import { changeCurrPage } from "../store";
+import { changeCurrPage } from "../../store";
 import React, { useEffect } from "react";
-import ProjectEdit from "./ProjectEdit";
 import { Link } from "react-router-dom";
 
 export default function DetailProject() {

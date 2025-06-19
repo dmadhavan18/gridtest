@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { changeCurrPage } from "../store";
+import { changeCurrPage } from "../../store";
 import { useEffect } from "react";
 import ProjectEdit from "./ProjectEdit";
-
 
 export default function ProjectList() {
   const currPage = useSelector((state) => state.topBar.currPage);
@@ -14,7 +13,6 @@ export default function ProjectList() {
     dispatch(changeCurrPage(page));
   }, [dispatch]);
 
-  // Dummy data for demonstration
   const projects = [
     {
       name: "Grid Test",
@@ -107,7 +105,6 @@ export default function ProjectList() {
                     strokeWidth={1.5}
                     stroke="currentColor"
                     className="size-5"
-                    onClick={<ProjectEdit />}
                   >
                     <path
                       strokeLinecap="round"

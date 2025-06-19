@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { changeCurrPage } from "../store";
+import { changeCurrPage } from "../../store";
 import { useCallback, useEffect, useState, useRef } from "react";
 import React from "react";
 

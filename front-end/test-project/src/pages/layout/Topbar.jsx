@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { changeCurrPage } from "../store";
-import { useEffect } from "react";
+import { changeCurrPage } from "../../store";
+import { useEffect,memo } from "react";
 
 export default function Topbar() {
   const currPage = useSelector((state) => state.topBar.currPage);
