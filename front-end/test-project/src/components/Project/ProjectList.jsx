@@ -33,29 +33,7 @@ export default function ProjectList() {
       lastUpdated: "06/06/25 12:30AM",
     },
   ];
-  }, [dispatch]);
 
-  // Dummy data for demonstration
-  const projects = [
-    {
-      name: "Grid Test",
-      screens: 20,
-      status: "Active",
-      lastUpdated: "06/06/25 12:30AM",
-    },
-    {
-      name: "Grid Test",
-      screens: 15,
-      status: "Active",
-      lastUpdated: "06/06/25 12:30AM",
-    },
-    {
-      name: "Grid Test",
-      screens: 19,
-      status: "Active",
-      lastUpdated: "06/06/25 12:30AM",
-    },
-  ];
 
   return (
     <div className="flex flex-col items-center w-full min-h-screen py-10">
@@ -142,6 +120,6 @@ export default function ProjectList() {
         ))}
       </div>
     </div>
-    </div>
+  
   );
 }
