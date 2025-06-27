@@ -42,7 +42,6 @@ const mockReportData = {
       { name: "E2E", passed: 30, failed: 3, skipped: 2, other: 1 },
     ],
   },
-  // Add more projects as needed
 };
 
 function formatDateTime(dt) {
@@ -97,7 +96,7 @@ const Reports = () => {
     <div className="min-h-screen font-sans text-violet-950 py-8">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-2xl font-light mb-8 tracking-tight text-violet-900">
-          Project Report{" "}
+          Project Report
           <span className="text-violet-600">{projectId}</span>
         </h2>
         {/* Info Cards */}
@@ -144,7 +143,6 @@ const Reports = () => {
             <Pie data={logPieData} />
           </div>
         </div>
-        {/* Author Table */}
         <div className="rounded-xl border border-violet-200 mt-8 shadow-sm p-6">
           <div className="font-light text-violet-800 text-lg mb-2">Author</div>
           <div className="overflow-x-auto">
@@ -192,7 +190,6 @@ const Reports = () => {
             </table>
           </div>
         </div>
-        {/* Tags Table */}
         <div className="rounded-xl border border-violet-200 mt-8 bg-white shadow-sm p-6">
           <div className="font-light text-violet-800 text-lg mb-2">Tags</div>
           <div className="overflow-x-auto">
