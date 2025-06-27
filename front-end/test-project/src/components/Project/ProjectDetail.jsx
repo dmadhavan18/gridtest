@@ -16,7 +16,7 @@ export default function DetailProject() {
     screensNo: "5",
     description: "A project to manage warehouse inventories and suppliers.",
     gitHubUrl: "https://github.com/sample/inventory-tracker",
-    projectUrl: "https://inventory.example.com",
+    projectUrl: "https://example.com",
     framework: "react",
     screens: [
       { name: "Dashboard", url: "/dashboard" },
@@ -29,8 +29,6 @@ export default function DetailProject() {
   };
 
   const textStyle = "px-4 py-3 rounded-xl";
-
- 
 
   return (
     <div className="relative">
@@ -54,22 +52,41 @@ export default function DetailProject() {
             <label className="font-normal">Description</label>
             <p className={textStyle}>{project.description}</p>
           </div>
-        </div> 
+        </div>
 
         <div className="grid grid-cols-2 items-center justify-center max-w-4xl 2xl:max-w-full gap-x-16 gap-y-8 bg-white p-8 rounded-xl">
-          <h3 className="col-span-2 text-violet-800 text-lg">Project Urls</h3>
-
+          <h3 className="col-span-2 text-violet-800 text-lg">Project Url</h3>
+          <div className="flex flex-col gap-4 items-start">
+            <label className="font-normal">Development url</label>
+            <p className="px-4 py-3 rounded-xl w-48 overflow-visilble">
+              {project.projectUrl}
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 items-start">
+            <label className="font-normal">QA url</label>
+            <p className="px-4 py-3 rounded-xl w-48 overflow-visilble">
+              {project.projectUrl}
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 items-start">
+            <label className="font-normal">UAT url</label>
+            <p className="px-4 py-3 rounded-xl w-48 overflow-visilble">
+              {project.projectUrl}
+            </p>
+          </div>
+          <div className="flex flex-col gap-4 items-start">
+            <label className="font-normal">Production url</label>
+            <p className="px-4 py-3 rounded-xl w-48 overflow-visilble">
+              {project.projectUrl}
+            </p>
+          </div>
           <div className="flex flex-col gap-4 items-start">
             <label className="font-normal">Git hub Repository Url</label>
-            <p className="px-4 py-3 rounded-xl w-48 overflow-visible">{project.gitHubUrl}</p>
+            <p className="px-4 py-3 rounded-xl w-48 overflow-visible">
+              {project.gitHubUrl}
+            </p>
           </div>
-
           <div className="flex flex-col gap-4 items-start">
-            <label className="font-normal">Project url</label>
-            <p className="px-4 py-3 rounded-xl w-48 overflow-visilble">{project.projectUrl}</p>
-          </div>
-
-          <div className="flex flex-col gap-4 items-start col-span-2">
             <label className="font-normal">Framework</label>
             <p className="px-4 py-3 rounded-xl">{project.framework}</p>
           </div>
@@ -82,9 +99,15 @@ export default function DetailProject() {
             <table className="w-full rounded-xl overflow-hidden">
               <thead className="bg-gray-100">
                 <tr>
-                  <th className="px-4 py-2 text-left font-medium text-gray-700">No</th>
-                  <th className="px-4 py-2 text-left font-medium text-gray-700">Name</th>
-                  <th className="px-4 py-2 text-left font-medium text-gray-700">Url</th>
+                  <th className="px-4 py-2 text-left font-medium text-gray-700">
+                    No
+                  </th>
+                  <th className="px-4 py-2 text-left font-medium text-gray-700">
+                    Name
+                  </th>
+                  <th className="px-4 py-2 text-left font-medium text-gray-700">
+                    Url
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -107,9 +130,15 @@ export default function DetailProject() {
             <table className="w-full rounded-xl overflow-hidden">
               <thead className="bg-gray-100">
                 <tr>
-                  <th className="px-4 py-2 text-left font-medium text-gray-700">No</th>
-                  <th className="px-4 py-2 text-left font-medium text-gray-700 ">User</th>
-                  <th className="px-4 py-2 text-left font-medium text-gray-700">Role</th>
+                  <th className="px-4 py-2 text-left font-medium text-gray-700">
+                    No
+                  </th>
+                  <th className="px-4 py-2 text-left font-medium text-gray-700 ">
+                    User
+                  </th>
+                  <th className="px-4 py-2 text-left font-medium text-gray-700">
+                    Role
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -127,7 +156,6 @@ export default function DetailProject() {
       </form>
       {/* Fixed action buttons */}
       <div className="fixed top-26 right-8 flex gap-4 z-50">
-        
         <Link to="/project/edit">
           <button className="bg-violet-600 text-white px-4 py-2 rounded-md shadow">
             Edit Project

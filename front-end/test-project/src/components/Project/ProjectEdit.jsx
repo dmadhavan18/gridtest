@@ -113,7 +113,35 @@ export default function ProjectEdit() {
 
         <div className="flex flex-col gap-4 items-start">
           <label htmlFor="git-hub-url" className="font-normal">
-            Git hub Repository Url
+            Development url
+          </label>
+          <input
+            type="text"
+            id="git-hub-url"
+            name="git-hub-url"
+            defaultValue="https://development.com/"
+            placeholder="Git hub url"
+            className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 placeholder:text-inherit"
+          />
+        </div>
+
+        <div className="flex flex-col gap-4 items-start">
+          <label htmlFor="project-url" className="font-normal">
+            QA Url
+          </label>
+          <input
+            type="text"
+            id="project-url"
+            name="project-url"
+            defaultValue="https://sampleproject.com"
+            placeholder="Project url"
+            className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 placeholder:text-inherit"
+          />
+        </div>
+
+        <div className="flex flex-col gap-4 items-start">
+          <label htmlFor="git-hub-url" className="font-normal">
+            UAT url
           </label>
           <input
             type="text"
@@ -127,7 +155,7 @@ export default function ProjectEdit() {
 
         <div className="flex flex-col gap-4 items-start">
           <label htmlFor="project-url" className="font-normal">
-            Project url
+            Production url
           </label>
           <input
             type="text"
@@ -135,6 +163,20 @@ export default function ProjectEdit() {
             name="project-url"
             defaultValue="https://sampleproject.com"
             placeholder="Project url"
+            className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 placeholder:text-inherit"
+          />
+        </div>
+
+        <div className="flex flex-col gap-4 items-start">
+          <label htmlFor="git-hub-url" className="font-normal">
+            Git hub Repository Url
+          </label>
+          <input
+            type="text"
+            id="git-hub-url"
+            name="git-hub-url"
+            defaultValue="https://github.com/sample/project"
+            placeholder="Git hub url"
             className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 placeholder:text-inherit"
           />
         </div>

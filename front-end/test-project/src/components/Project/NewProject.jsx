@@ -108,26 +108,65 @@ export default function NewProject() {
 
           <div className="flex flex-col gap-4 items-start">
             <label htmlFor="git-hub-url" className="font-normal">
-              Git hub Repository Url
+              Development Url
             </label>
             <input
               type="text"
               id="git-hub-url"
               name="git-hub-url"
-              placeholder="Git hub url"
+              placeholder="https://example.com"
               className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 placeholder:text-inherit"
             />
           </div>
 
           <div className="flex flex-col gap-4 items-start">
             <label htmlFor="project-url" className="font-normal">
-              Project url
+              QA url
             </label>
             <input
               type="text"
               id="project-url"
               name="project-url"
-              placeholder="Project url"
+              placeholder="https://example.com"
+              className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 placeholder:text-inherit"
+            />
+          </div>
+
+          <div className="flex flex-col gap-4 items-start">
+            <label htmlFor="project-url" className="font-normal">
+              UAT url
+            </label>
+            <input
+              type="text"
+              id="project-url"
+              name="project-url"
+              placeholder="https://example.com"
+              className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 placeholder:text-inherit"
+            />
+          </div>
+
+          <div className="flex flex-col gap-4 items-start">
+            <label htmlFor="project-url" className="font-normal">
+              Production url
+            </label>
+            <input
+              type="text"
+              id="project-url"
+              name="project-url"
+              placeholder="https://example.com"
+              className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 placeholder:text-inherit"
+            />
+          </div>
+
+          <div className="flex flex-col gap-4 items-start">
+            <label htmlFor="project-url" className="font-normal">
+              Github Repository
+            </label>
+            <input
+              type="text"
+              id="project-url"
+              name="project-url"
+              placeholder="https://example.com"
               className="w-full px-4 py-3 rounded-xl outline-1 outline-gray-300 focus:outline-violet-500 placeholder:text-inherit"
             />
           </div>
